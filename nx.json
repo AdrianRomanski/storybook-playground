@@ -47,6 +47,9 @@
     },
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
+    },
+    "build-storybook": {
+      "cache": true
     }
   },
   "plugins": [
