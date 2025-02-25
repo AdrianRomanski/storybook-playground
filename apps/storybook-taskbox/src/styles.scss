@@ -1,1 +1,222 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  outline: none;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+  background-color: #26c6da;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+p,
+label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 100%;
+  line-height: normal;
+  font-family: inherit;
+  vertical-align: middle;
+  overflow: visible;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe0oMImSLYBIv1o4X1M8cce4E9lKcw.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe0qMImSLYBIv1o4X1M8cce9I94.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8aBc5tU1Q.ttf) format("truetype");
+}
+
+%font-nunito {
+   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+
+.type-light {
+  @extend %font-nunito;
+  font-weight: 300;
+}
+
+.type-bold {
+  @extend %font-nunito;
+  font-weight: 800;
+}
+
+.type-italic {
+  @extend %font-nunito;
+  font-weight: 400;
+  font-style: italic;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  @extend %font-nunito;
+  font-size: 14px;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  border: none;
+  box-sizing: border-box;
+  color: #333;
+  outline: none;
+}
+
+.checkbox {
+  display: inline-block;
+  height: 3rem;
+  position: relative;
+  vertical-align: middle;
+  width: 44px;
+
+  input[type="checkbox"] {
+    visibility: hidden;
+  }
+
+  input[type="checkbox"] + span:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.85em;
+    height: 0.85em;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    box-shadow: #2cc5d2 0 0 0 1px inset;
+    content: "";
+    display: block;
+  }
+
+  input[type="checkbox"]:checked + span:before {
+    font-size: 16px;
+    line-height: 24px;
+    box-shadow: none;
+    color: #2cc5d2;
+    margin-top: -1px;
+    font-family: "percolate";
+    content: "\e65e";
+  }
+}
+
+.list-heading {
+  @extend %font-nunito;
+  font-weight: 800;
+  font-size: 11px;
+  padding-left: 15px;
+  line-height: 40px;
+  background: #f8f8f8;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+}
+
+.list-item {
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 3rem;
+  width: 100%;
+  background: white;
+  transition: all ease-out 150ms;
+}
+
+.pin-button {
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  border: none;
+  text-align: center;
+  transition: all 200ms ease-in;
+  color: #eee;
+  font-size: 16px;
+  line-height: 3rem;
+  outline: none;
+
+  &:hover {
+    color: #2cc5d2;
+  }
+  &:focus {
+    outline-color: transparent;
+  }
+  &:active {
+    color: #555;
+  }
+}
+
+.page.lists-show {
+  min-height: 100vh;
+  background: white;
+
+  nav {
+    background: #d3edf4;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+
+    @media screen and (min-width: 40em) {
+      text-align: left;
+    }
+  }
+}
